@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Random Fun Facts - Mind-Blowing Discoveries!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            font-style: italic;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .fact-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .fact-card:nth-child(1) { animation-delay: 0.1s; }
+        .fact-card:nth-child(2) { animation-delay: 0.2s; }
+        .fact-card:nth-child(3) { animation-delay: 0.3s; }
+        .fact-card:nth-child(4) { animation-delay: 0.4s; }
+        .fact-card:nth-child(5) { animation-delay: 0.5s; }
+        .fact-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .fact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #fff, transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .fact-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .fact-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .fact-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 15px 0;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .fact-content {
+            color: #333;
+            line-height: 1.6;
+            font-size: 1em;
+        }
+
+        .color-1 { border-top: 5px solid #FF6B6B; }
+        .color-2 { border-top: 5px solid #4ECDC4; }
+        .color-3 { border-top: 5px solid #FFE66D; }
+        .color-4 { border-top: 5px solid #95E1D3; }
+        .color-5 { border-top: 5px solid #F38181; }
+        .color-6 { border-top: 5px solid #AA96DA; }
+
+        button {
+            display: block;
+            margin: 40px auto 0;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌟 Random Fun Facts 🌟</h1>
+        <p class="subtitle">Discover mind-blowing facts that will amaze you!</p>
+    </header>
+
+    <div class="container">
+        <div class="fact-card color-1">
+            <div class="fact-number">1</div>
+            <div class="fact-icon">🐙</div>
+            <div class="fact-title">Octopuses Have Three Hearts</div>
+            <div class="fact-content">Two hearts pump blood to the gills, while the third pumps it to the rest of the body. Incredibly, the heart that delivers blood to the body actually stops beating when the octopus swims!</div>
+        </div>
+
+        <div class="fact-card color-2">
+            <div class="fact-number">2</div>
+            <div class="fact-icon">⚡</div>
+            <div class="fact-title">Bananas Are Berries, Strawberries Aren't</div>
+            <div class="fact-content">Botanically speaking, bananas are berries because they develop from a single flower's ovary. Strawberries, despite their name, are actually not berries but aggregate fruits!</div>
+        </div>
+
+        <div class="fact-card color-3">
+            <div class="fact-number">3</div>
+            <div class="fact-icon">🌍</div>
+            <div class="fact-title">Honey Never Spoils</div>
+            <div class="fact-content">Archaeologists have found 3000-year-old honey in Egyptian tombs that was still perfectly edible! Honey's low moisture content and acidity prevent bacterial growth.</div>
+        </div>
+
+        <div class="fact-card color-4">
+            <div class="fact-number">4</div>
+            <div class="fact-icon">🧠</div>
+            <div class="fact-title">Your Brain Uses 20% of Your Energy</div>
+            <div class="fact-content">Even though your brain is only about 2% of your body's weight, it consumes approximately 20% of your total energy. That's why thinking hard makes you hungry!</div>
+        </div>
+
+        <div class="fact-card color-5">
+            <div class="fact-number">5</div>
+            <div class="fact-icon">👅</div>
+            <div class="fact-title">Fingerprints Have Ridge Patterns on Your Tongue</div>
+            <div class="fact-content">Just like your fingers, your tongue also has unique ridge patterns that are completely unique to you. Tongue prints could theoretically be used for identification!</div>
+        </div>
+
+        <div class="fact-card color-6">
+            <div class="fact-number">6</div>
+            <div class="fact-icon">💫</div>
+            <div class="fact-title">A Day on Venus is Longer Than Its Year</div>
+            <div class="fact-content">Venus takes 243 Earth days to rotate once on its axis, but only 225 Earth days to orbit the sun. This makes a Venusian day longer than a Venusian year!</div>
+        </div>
+    </div>
+
+    <button onclick="alert('More fun facts coming soon! 🎉')">Discover More Facts</button>
+
+    <footer>
+        <p>✨ Keep your mind curious and your spirit adventurous! ✨</p>
+    </footer>
+</body>
+</html>
